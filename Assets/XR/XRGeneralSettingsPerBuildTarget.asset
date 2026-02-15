@@ -1,6 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD
 --- !u!114 &-8685328191203365063
+=======
+--- !u!114 &-4977668479296344845
+>>>>>>> 26d10376f73b0cb68e8d72b6be50c6018bb690c7
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16,8 +20,13 @@ MonoBehaviour:
   m_AutomaticLoading: 0
   m_AutomaticRunning: 0
   m_Loaders:
+<<<<<<< HEAD
   - {fileID: 11400000, guid: 91526e539704b7443a0e7938a3fdfa44, type: 2}
 --- !u!114 &-7752674118193784174
+=======
+  - {fileID: 11400000, guid: 969618ebc568d4446acd01798c91356c, type: 2}
+--- !u!114 &-1916697420517355913
+>>>>>>> 26d10376f73b0cb68e8d72b6be50c6018bb690c7
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -29,6 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d236b7d11115f2143951f1e14045df39, type: 3}
   m_Name: Standalone Settings
   m_EditorClassIdentifier: Unity.XR.Management::UnityEngine.XR.Management.XRGeneralSettings
+<<<<<<< HEAD
   m_LoaderManagerInstance: {fileID: -8685328191203365063}
   m_InitManagerOnStart: 1
 --- !u!114 &-5306190474632360119
@@ -47,6 +57,10 @@ MonoBehaviour:
   m_AutomaticLoading: 0
   m_AutomaticRunning: 0
   m_Loaders: []
+=======
+  m_LoaderManagerInstance: {fileID: -4977668479296344845}
+  m_InitManagerOnStart: 1
+>>>>>>> 26d10376f73b0cb68e8d72b6be50c6018bb690c7
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,6 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2dc886499c26824283350fa532d087d, type: 3}
   m_Name: XRGeneralSettingsPerBuildTarget
   m_EditorClassIdentifier: Unity.XR.Management.Editor::UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget
+<<<<<<< HEAD
   Keys: 0100000007000000
   Values:
   - {fileID: -7752674118193784174}
@@ -77,3 +92,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Management::UnityEngine.XR.Management.XRGeneralSettings
   m_LoaderManagerInstance: {fileID: -5306190474632360119}
   m_InitManagerOnStart: 1
+=======
+  Keys: 01000000
+  Values:
+  - {fileID: -1916697420517355913}
+>>>>>>> 26d10376f73b0cb68e8d72b6be50c6018bb690c7
