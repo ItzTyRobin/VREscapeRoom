@@ -968,6 +968,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 122126, guid: 6171613fc397b614c826d129096c2575, type: 3}
+      propertyPath: m_Name
+      value: door
+      objectReference: {fileID: 0}
     - target: {fileID: 122218, guid: 6171613fc397b614c826d129096c2575, type: 3}
       propertyPath: m_Name
       value: THE_WOOD_CABIN_01
@@ -1178,6 +1182,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 122034, guid: 6171613fc397b614c826d129096c2575, type: 3}
       insertIndex: -1
       addedObject: {fileID: 67005747}
+    - targetCorrespondingSourceObject: {fileID: 122126, guid: 6171613fc397b614c826d129096c2575, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1254350828}
     - targetCorrespondingSourceObject: {fileID: 122174, guid: 6171613fc397b614c826d129096c2575, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1091724394}
@@ -1290,6 +1297,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f69dc1cb084aa42b2f2f8cd87bc770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &599278355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 599278357}
+  - component: {fileID: 599278356}
+  m_Layer: 0
+  m_Name: DoorHinge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &599278356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599278355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de50c13762a71e64ba7f0160981eece3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::toggleDoor
+  door: {fileID: 1254350827}
+  angle: 90
+  isOpen: 0
+--- !u!4 &599278357
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599278355}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.71, y: 3.94, z: 3.28838}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &701155161
 GameObject:
   m_ObjectHideFlags: 0
@@ -2651,6 +2705,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bf7151579c38e2a44be94ba8773876c1, type: 3}
   m_PrefabInstance: {fileID: 1253950594}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1254350826 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 122126, guid: 6171613fc397b614c826d129096c2575, type: 3}
+  m_PrefabInstance: {fileID: 350304049}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1254350827 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 422126, guid: 6171613fc397b614c826d129096c2575, type: 3}
+  m_PrefabInstance: {fileID: 350304049}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1254350828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254350826}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de50c13762a71e64ba7f0160981eece3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  door: {fileID: 0}
+  angle: 90
+  isOpen: 0
 --- !u!1 &1328452867 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 122164, guid: 6171613fc397b614c826d129096c2575, type: 3}
@@ -4515,3 +4594,4 @@ SceneRoots:
   - {fileID: 273958212}
   - {fileID: 1178768258}
   - {fileID: 1816953334}
+  - {fileID: 599278357}
