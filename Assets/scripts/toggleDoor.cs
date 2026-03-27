@@ -1,27 +1,31 @@
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class toggleDoor : MonoBehaviour
 {
-
     public Transform door;
-    public float angle = 90f;
     public bool isOpen = false;
+    public float speed = 2f;
+    public float angle = 45f;
+    private Quaternion targetRotation;
 
-    // Update is called once per frame
+    void Start()
+    {
+        targetRotation = door.rotation;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ToggleDoor();
+            isOpen = !isOpen;
+
+            if (isOpen)
+                targetRotation *= Quaternion.Euler(0, angle, 0);
+            else
+                targetRotation *= Quaternion.Euler(0, -angle, 0);
         }
-    }
 
-    public void ToggleDoor()
-    {
-        isOpen = !isOpen;
-
-        float openangle = isOpen ? angle : -angle;
-
-        door.RotateAround(transform.position, transform.up, openangle);
+        door.rotation = Quaternion.Slerp(door.rotation, targetRotation, Time.deltaTime * speed);
     }
 }

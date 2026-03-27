@@ -1327,8 +1327,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::toggleDoor
   door: {fileID: 1254350827}
-  angle: 90
   isOpen: 0
+  speed: 2
+  angle: 90
 --- !u!4 &599278357
 Transform:
   m_ObjectHideFlags: 0
@@ -2722,14 +2723,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254350826}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de50c13762a71e64ba7f0160981eece3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  door: {fileID: 0}
-  angle: 90
+  door: {fileID: 1254350827}
   isOpen: 0
+  speed: 0.1
+  angle: 60
 --- !u!1 &1328452867 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 122164, guid: 6171613fc397b614c826d129096c2575, type: 3}
