@@ -15,10 +15,6 @@ public class toggleDoor : MonoBehaviour
     {
         targetRotation = door.rotation;
         initialRotation = door.rotation;
-        Debug.Log(door.rotation);
-        Debug.Log(initialRotation);
-        Debug.Log(targetRotation);
-        Debug.Log("at start");
     }
 
     void Update()
@@ -37,10 +33,7 @@ public class toggleDoor : MonoBehaviour
         }
         else
             targetRotation = initialRotation;
-        Debug.Log(door.rotation);
-        Debug.Log(initialRotation);
-        Debug.Log(targetRotation);
-        Debug.Log("at update");
+
         door.rotation = Quaternion.Slerp(door.rotation, targetRotation, openAmt);
     }
 }
