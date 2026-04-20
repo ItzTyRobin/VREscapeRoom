@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MoveRuller : MonoBehaviour
 {
@@ -19,11 +20,13 @@ public class MoveRuller : MonoBehaviour
 
     private bool _isActveEmission = false;
 
+    public InputActionReference input;
+
 
     void Awake()
     {
-        _lockPassword = FindObjectOfType<PadLockPassword>();
-        _pLockColor = FindObjectOfType<PadLockEmissionColor>();
+        _lockPassword = Object.FindFirstObjectByType<PadLockPassword>();
+        _pLockColor = Object.FindFirstObjectByType<PadLockEmissionColor>();
 
         _rullers.Add(GameObject.Find("Ruller1"));
         _rullers.Add(GameObject.Find("Ruller2"));
@@ -44,7 +47,7 @@ public class MoveRuller : MonoBehaviour
 
     void MoveRulles()
     {
-        if (Input.GetKeyDown(KeyCode.D)) 
+        if (input.action.WasPressedThisFrame()) 
         {
             _isActveEmission = true;
             _changeRuller ++;
