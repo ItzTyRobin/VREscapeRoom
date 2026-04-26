@@ -1,33 +1,31 @@
-﻿// Script by Marcelli Michele
-
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PadLockPassword : MonoBehaviour
 {
-    MoveRuller _moveRull;
+    public int[] currentCode = { 0, 0, 0, 0 };
+    public int[] _numberPassword = { 0, 0, 0, 0 };
 
-    public int[] _numberPassword = {0,0,0,0};
+    public UnityEvent onCorrectPassword;
 
-    private void Awake()
+    private bool unlocked = false;
+
+    public void SetDigit(int index, int value)
     {
-        _moveRull = FindObjectOfType<MoveRuller>();
+        currentCode[index] = value;
+        CheckPassword();
     }
 
-    public void Password()
+    private void CheckPassword()
     {
-        if (_moveRull._numberArray.SequenceEqual(_numberPassword))
+        if (unlocked) return;
+
+        if (currentCode.SequenceEqual(_numberPassword))
         {
-            // Here enter the event for the correct combination
+            unlocked = true;
             Debug.Log("Password correct");
-
-            // Es. Below the for loop to disable Blinking Material after the correct password
-            for (int i = 0; i < _moveRull._rullers.Count; i++)
-            {
-                _moveRull._rullers[i].GetComponent<PadLockEmissionColor>()._isSelect = false;
-                _moveRull._rullers[i].GetComponent<PadLockEmissionColor>().BlinkingMaterial();
-            }
-
+            onCorrectPassword?.Invoke();
         }
     }
 }

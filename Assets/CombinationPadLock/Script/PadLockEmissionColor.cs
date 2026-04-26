@@ -1,40 +1,36 @@
-﻿// Script by Marcelli Michele
-
 using UnityEngine;
 
 public class PadLockEmissionColor : MonoBehaviour
 {
-    TimeBlinking tb;
+    public Color glowColor = Color.yellow;
+    public float blinkSpeed = 2f;
 
-    private GameObject _myRuller;
-
-    [HideInInspector]
-    public bool _isSelect;
-
-    //[SerializeField] private float _timeBlinking = 0.5f;
+    private Renderer rend;
+    private Material mat;
+    private bool isSelected = false;
 
     private void Awake()
     {
-        tb = FindObjectOfType<TimeBlinking>();
-    }
-    void Start()
-    {
-        _myRuller = gameObject;
+        rend = GetComponent<Renderer>();
+        mat = rend.material;
+        mat.EnableKeyword("_EMISSION");
     }
 
-
-    public void BlinkingMaterial()
+    private void Update()
     {
-        _myRuller.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-        
-        if (_isSelect)
+        if (isSelected)
         {
-            _myRuller.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.Lerp(Color.clear, Color.yellow, Mathf.PingPong(Time.time, tb.blinkingTime)));
+            Color finalColor = Color.Lerp(Color.clear, glowColor, Mathf.PingPong(Time.time * blinkSpeed, 1f));
+            mat.SetColor("_EmissionColor", finalColor);
         }
-        if (_isSelect == false)
+        else
         {
-            _myRuller.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.clear);
+            mat.SetColor("_EmissionColor", Color.clear);
         }
+    }
 
+    public void SetSelected(bool selected)
+    {
+        isSelected = selected;
     }
 }
