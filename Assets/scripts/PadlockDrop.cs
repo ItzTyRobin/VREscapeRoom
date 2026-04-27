@@ -2,15 +2,13 @@ using UnityEngine;
 
 public class PadlockDrop : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Rigidbody rb;
 
-    // Update is called once per frame
-    void Update()
+    public void DropLock()
     {
-        
+        if (rb == null) rb = GetComponent<Rigidbody>();
+        if (rb != null)
+            rb.useGravity = true;
     }
 }
+
