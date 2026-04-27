@@ -11,6 +11,8 @@ public class PadLockPassword : MonoBehaviour
 
     private bool unlocked = false;
 
+    public GameObject chestTop;
+
     public void SetDigit(int index, int value)
     {
         currentCode[index] = value;
@@ -26,6 +28,7 @@ public class PadLockPassword : MonoBehaviour
             unlocked = true;
             Debug.Log("Password correct");
             onCorrectPassword?.Invoke();
+
         }
     }
 }
