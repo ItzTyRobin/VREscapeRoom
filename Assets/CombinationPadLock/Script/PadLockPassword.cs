@@ -11,8 +11,6 @@ public class PadLockPassword : MonoBehaviour
 
     private bool unlocked = false;
 
-    public GameObject chestTop;
-
     public void SetDigit(int index, int value)
     {
         currentCode[index] = value;

@@ -2173,7 +2173,6 @@ GameObject:
   m_Component:
   - component: {fileID: 330585181}
   - component: {fileID: 330585180}
-  - component: {fileID: 330585179}
   m_Layer: 0
   m_Name: ChestTrigger
   m_TagString: Untagged
@@ -2181,20 +2180,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &330585179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdd04eb5862d5f74c91caa64805fcf36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  chestTop: {fileID: 1570340072}
-  chestKey: {fileID: 1863438811}
 --- !u!65 &330585180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9122,9 +9107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   chestTop: {fileID: 1570340069}
-  open: 0
   speed: 1
-  angle: -250
+  angle: 100
 --- !u!1001 &1600866589
 PrefabInstance:
   m_ObjectHideFlags: 0

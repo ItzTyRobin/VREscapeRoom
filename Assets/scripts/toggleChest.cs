@@ -1,38 +1,37 @@
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class toggleChest : MonoBehaviour
 {
-
     public Transform chestTop;
-    public bool open = false;
-    public float speed = 1f;
-    public float angle = -140f;
-    private Quaternion targetRotation;
-    private Quaternion initialRotation;
-    private float openAmt;
+    public float speed = 2f;
+    public float angle = 100f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private Quaternion initialRotation;
+    private Quaternion targetRotation;
+
+    private float t = 0f;
+    private bool isOpening = false;
+
     void Start()
     {
-        targetRotation = chestTop.rotation;
-        initialRotation = chestTop.rotation;
+        initialRotation = chestTop.localRotation;
+        targetRotation = initialRotation * Quaternion.Euler(angle, 0, 0);
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (isOpening)
+        {
+            t += Time.deltaTime * speed;
+            t = Mathf.Clamp01(t);
 
+            chestTop.localRotation = Quaternion.Slerp(initialRotation, targetRotation, t);
+        }
     }
 
     public void openChest()
     {
-   
-        targetRotation = initialRotation * Quaternion.Euler(angle, 0, 0);
-        openAmt += Time.deltaTime * speed;
-        openAmt = Mathf.Clamp(openAmt, 0, 1);
-
-        chestTop.rotation = Quaternion.Slerp(chestTop.rotation, targetRotation, openAmt);
+        isOpening = true;
+        t = 0f;
     }
 }
-
