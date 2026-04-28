@@ -15,7 +15,7 @@ public class toggleChest : MonoBehaviour
     void Start()
     {
         initialRotation = chestTop.localRotation;
-        targetRotation = initialRotation * Quaternion.Euler(angle, 0, 0);
+        targetRotation = initialRotation * Quaternion.Euler(-angle, 0, 0);
     }
 
     void Update()
