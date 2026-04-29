@@ -1,10 +1,10 @@
-using System;
 using UnityEngine;
 
 public class doorTrigger : MonoBehaviour
 {
 
     public toggleDoor door;
+    public string requiredKeyID = "rust_key";
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,9 +20,14 @@ public class doorTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Key key = other.GetComponent<Key>();
 
-        // if other is key 
-        if (other.gameObject.GetComponent<Key>() != null)
+        if (key == null)
+        {
+            key = other.GetComponentInParent<Key>();
+        }
+
+        if (key != null && key.Matches(requiredKeyID))
         {
             door.isOpen = true;
             Debug.Log("trigger door stuck");
